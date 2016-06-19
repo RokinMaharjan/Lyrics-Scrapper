@@ -1,2 +1,4 @@
 # Lyrics-Scrapper
-Scraps the lyrics of a song and allows you to save it in a file.
+Scrap lyrics of your favourite songs, effortlessly!  
+  
+Check the wiki page for detailed information!
