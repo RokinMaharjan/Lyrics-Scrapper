@@ -6,21 +6,19 @@
 package com.lyricsscrapper.scrapper.downloadcontent;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
+
 /**
  *
  * @author rokin
  */
 public class ContentDownloader {
     
-    public void downloader(String content) throws IOException 
+    public void downloader(String content, String songName, String artist ) throws IOException 
     {
-        Scanner input = new Scanner(System.in);
-        
-        System.out.println("Enter the path and file name to save the lyrics (eg. d:/lyrics.html)");
-        BufferedWriter writer = new BufferedWriter(new FileWriter(input.nextLine()));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(new File(songName + " - " + artist + ".txt")));
         writer.write(content);
         writer.close();
     }

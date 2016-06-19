@@ -11,46 +11,26 @@ package com.lyricsscrapper;
  */
 
 import com.lyricsscrapper.scrapper.LyricsScrapper;
-import com.lyricsscrapper.scrapper.downloadcontent.ContentDownloader;
 import java.io.IOException;
-import java.util.Scanner;
+
 
 public class MainProgram {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        
-        Scanner input = new Scanner(System.in);
-        
-        LyricsScrapper lyricsScrapper = new LyricsScrapper();
-        ContentDownloader contentDownloader = new ContentDownloader();
-        
-        try
-        {
-            while(true)
-            {
-                String content = lyricsScrapper.grabContent();
-                if(content!=null)
-                {
-                    System.out.println("The lyrics has been scrapped \n");
-
-                    contentDownloader.downloader(content);
-
-                    System.out.println("\nSave another lyrics? (Y/N)");
-                    if(input.next().equalsIgnoreCase("N"))
-                    {
-                        System.exit(0);
-                    }
-                }
-            }
+    public static void main(String[] args)
+    {
+        try {
+            LyricsScrapper lyricsScrapper = new LyricsScrapper();       
+            lyricsScrapper.grabContent();
             
-        }catch(IOException ex){
-            System.out.println(ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println("Exception: " + ex.getMessage());
         }
-        
-        
+            
     }
-    
+               
 }
+    
+
